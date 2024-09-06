@@ -19,14 +19,14 @@ def operation_to_message(op)
   end
 end
 
-prompt("Welcome to Calculator! Please enter your name:")
+prompt('Welcome to Calculator! Please enter your name:')
 
 name = ''
 loop do
   name = Kernel.gets().chomp()
-  
+
   if name.empty?()
-    prompt("Please enter a valid name.")
+    prompt('Please enter a valid name.')
   else
     break
   end
@@ -43,7 +43,7 @@ loop do # main loop
     if valid_number?(number1)
       break
     else
-      prompt("Try again.")
+      prompt('Try again.')
     end
   end
 
@@ -55,27 +55,27 @@ loop do # main loop
     if valid_number?(number2)
       break
     else
-      prompt("Try again.")
+      prompt('Try again.')
     end
   end
 
   operator_prompt = <<-MSG
-    What operation would you like to perform? 
-    1) add 
-    2) subtract  
-    3) multiply 
+    What operation would you like to perform?
+    1) add
+    2) subtract
+    3) multiply
     4) divide
   MSG
-  
+
   prompt(operator_prompt)
 
   operator = ''
   loop do
     operator = Kernel.gets().chomp()
-    if %w(1 2 3 4).include?(operator)
+    if %w[1 2 3 4].include?(operator)
       break
     else
-      prompt("Please choose 1, 2, 3, or 4")
+      prompt('Please choose 1, 2, 3, or 4')
     end
   end
 
@@ -83,21 +83,21 @@ loop do # main loop
   sleep(2)
 
   result = case operator
-          when '1'
-            number1.to_i() + number2.to_i()
-          when '2'
-            number1.to_i() - number2.to_i()
-          when '3'
-            number1.to_i() * number2.to_i()
-          when '4'
-            number1.to_f() / number2.to_f()
-  end
+           when '1'
+             number1.to_i() + number2.to_i()
+           when '2'
+             number1.to_i() - number2.to_i()
+           when '3'
+             number1.to_i() * number2.to_i()
+           when '4'
+             number1.to_f() / number2.to_i()
+           end
 
   prompt("The result is #{result}")
 
-  prompt("Do you want to perform another calculation? (Y to calculate again)")
+  prompt('Do you want to perform another calculation? (Y to calculate again)')
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')
 end
 
-prompt("Thank you for using the calculator. Bye-bye!")
+prompt('Thank you for using the calculator. Bye-bye!')
