@@ -9,7 +9,7 @@ def make(new_car)
 end
 
 def model(new_car)
-  new_car.split(" ")[2]
+  new_car.split(" ")[2] # this will return nil because there is no element at index 2
 end
 
 p make, model = car("Ford Mustang")
