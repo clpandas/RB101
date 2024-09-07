@@ -15,3 +15,7 @@ end
 make, model = car("Ford Mustang")
 p make == "Ford"
 p model.start_with?("M")
+
+make, model = car("Toyota Camry")
+p make == "Toyota"
+p model.start_with?("C")
