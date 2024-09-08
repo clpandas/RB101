@@ -1,4 +1,4 @@
-def greet(name = 'Teddy')
+def greet(name ='Teddy')
   puts "Please enter a name:"
   user_input = gets.chomp
   name = user_input unless user_input.empty?
