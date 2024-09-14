@@ -12,7 +12,7 @@ def calculate_monthly_rate(annual_percentage_rate)
 end
 
 def calculate_monthly_payment(loan_amount, monthly_rate, loan_duration_in_months)
-  if monthly_rate == 0
+  if monthly_rate.zero?
     loan_amount / loan_duration_in_months
   else
     loan_amount * (monthly_rate / (1 - (1 + monthly_rate)**-loan_duration_in_months))
@@ -25,34 +25,31 @@ name = ''
 loop do
   name = gets.chomp
 
-  if name.empty?
-    prompt('Please enter a valid name.')
-  else
-    break
-  end
+  break unless name.empty? # Guard clause to break out if name is not empty
+
+  prompt('Please enter a valid name.')
 end
 
 prompt("Hi there, #{name}! I am your personal loan calculator.")
-prompt("I will be asking for your principal loan amount, your loan APR, " + \
-"and your loan duration in years to calculate your monthly loan payment. Let's begin!")
 
 # Main loop
 loop do
   loan_amount = ''
-  loop do 
+  loop do
     prompt('What is your principal loan amount?')
     loan_amount = gets.chomp
-    break if valid_number?(loan_amount) && loan_amount.to_f > 0
+    break if valid_number?(loan_amount) && loan_amount.to_f.positive?
+
     prompt('Please enter a valid positive number.')
   end
   loan_amount = loan_amount.to_f
 
   annual_percentage_rate = ''
-  monthly_rate = ''
   loop do
     prompt('What percent is your loan APR? (e.g., 5 for 5%)')
     annual_percentage_rate = gets.chomp
     break if valid_number?(annual_percentage_rate) && annual_percentage_rate.to_f >= 0
+
     prompt('Please enter a valid APR.')
   end
   annual_percentage_rate = annual_percentage_rate.to_f / 100
@@ -62,7 +59,8 @@ loop do
   loop do
     prompt('What is your loan duration in years?')
     loan_duration_in_years = gets.chomp
-    break if valid_number?(loan_duration_in_years) && loan_duration_in_years.to_i > 0
+    break if valid_number?(loan_duration_in_years) && loan_duration_in_years.to_i.positive?
+
     prompt('Please enter a valid positive number.')
   end
   loan_duration_in_years = loan_duration_in_years.to_i
