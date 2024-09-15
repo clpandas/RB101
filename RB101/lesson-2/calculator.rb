@@ -2,21 +2,30 @@ def prompt(message)
   Kernel.puts("=>#{message}")
 end
 
-def valid_number?(num)
+def integer?(num)
   num.to_i.to_s == num
 end
 
+def float?(num)
+  num.to_f.to_s == num
+end
+
+def valid_number?(num)
+  integer?(num) || float?(num)
+end
+
 def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+response =  case op
+            when '1'
+              'Adding'
+            when '2'
+              'Subtracting'
+            when '3'
+              'Multiplying'
+            when '4'
+              'Dividing'
+            end
+  response
 end
 
 prompt('Welcome to Calculator! Please enter your name:')
