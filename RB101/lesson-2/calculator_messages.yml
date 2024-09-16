@@ -1,17 +1,44 @@
-welcome: "Welcome to Calculator! Please enter your name:"
-valid_name: "Please enter a valid name."
-hello: "Hi %{name}!"
-first_number: "What's the first number?"
-valid_number: "Please enter a valid number."
-second_number: "What's the second number?"
-operator_prompt: |
-  What operation would you like to perform?
-  1) add
-  2) subtract
-  3) multiply
-  4) divide
-valid_operation: "Please choose 1, 2, 3, or 4"
-calculating: "%{operation} the two numbers..."
-result: "The result is %{result}"
-another_calculation: "Do you want to perform another calculation? (Y to calculate again)"
-thank_you: "Thank you for using the calculator. Bye-bye!"
+en:
+  adding: "Adding"
+  subtracting: "Subtracting"
+  multiplying: "Multiplying"
+  dividing: "Dividing"
+  welcome: "Welcome to Calculator! Please enter your name:"
+  valid_name: "Please enter a valid name."
+  hello: "Hi %{name}!"
+  first_number: "What's the first number?"
+  valid_number: "Please enter a valid number."
+  second_number: "What's the second number?"
+  operator_prompt: |
+    What operation would you like to perform?
+    1) add
+    2) subtract
+    3) multiply
+    4) divide
+  valid_operation: "Please choose 1, 2, 3, or 4"
+  calculating: "%{operation} the two numbers..."
+  result: "The result is %{result}"
+  another_calculation: "Do you want to perform another calculation? (Y to calculate again)"
+  thank_you: "Thank you for using the Calculator. Bye-bye!"
+ja:
+  adding: "足す"
+  subtracting: "引く"
+  multiplying: "掛ける"
+  dividing: "割る"
+  welcome: "計算機へようこそ! 名前を入力してください:"
+  valid_name: "有効な名前を入力してください。"
+  hello: "こんにちは、%{name}さん！"
+  first_number: "最初の数字は何ですか?"
+  valid_number: "有効な番号を入力してください。"
+  second_number: "2番目の数字は何ですか?"
+  operator_prompt: |
+    どのような操作を実行しますか?
+    1) 足し算
+    2) 引き算
+    3) 掛け算 
+    4) 割り算 
+  valid_operation: "1、2、3、または4を選択してください。"
+  calculating: "2 つの数字を %{operation}..."
+  result: "結果は%{result}です。"
+  another_calculation: "もう一度計算を実行しますか? (再度計算するには Y を押します)"
+  thank_you: "計算機をご利用いただきありがとうございました。さようなら！"
