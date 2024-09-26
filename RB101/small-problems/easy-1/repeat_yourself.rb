@@ -1,7 +1,21 @@
+# Added validation to ensure the input string is in fact a String and is also not empty space. 
+# Added validation to ensure the input number is in fact a positive Integer.
 def repeat(string, number)
-  number.times do
-    puts string
+  if !string.is_a?(String) || string.strip.empty?
+    puts "Invalid input: The first argument must be a non-empty string."
+    return
   end
+
+  if !number.is_a?(Integer) || number < 0
+    puts "Invalid input: The second argumment must be a positive integer."
+    return
+  end
+
+  number.times { puts string }
 end
 
 repeat('Hello', 3)
+repeat('', 3)
+repeat(' ', 3)
+repeat(123, 3)
+repeat('Hello', -3)
